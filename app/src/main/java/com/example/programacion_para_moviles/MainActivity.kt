@@ -58,7 +58,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
         Text(text = "Nivel de satisfacción:")
         RangeSlider(
-            value = 0f,
+            value = 0f..0f,
             onValueChange = {},
             valueRange = 1f..5f,
         )
