@@ -4,13 +4,23 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RangeSlider
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.programacion_para_moviles.ui.theme.Programacion_Para_MovilesTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +31,7 @@ class MainActivity : ComponentActivity() {
             Programacion_Para_MovilesTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Encuesta de Satisfacción",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -32,10 +42,44 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center
+    ){
+        Text(
+            text = "Encuesta de Satisfacción",
+        )
+
+        Text(text = "Nombre:")
+        OutlinedTextField(
+            value = "",
+            onValueChange = {},
+        )
+
+        Text(text = "Nivel de satisfacción:")
+        RangeSlider(
+            value = 0f,
+            onValueChange = {},
+            valueRange = 1f..5f,
+        )
+
+        Text(text = "Comentarios:")
+        OutlinedTextField(
+            value = "",
+            onValueChange = {},
+            maxLines = 4,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(120.dp)
+        )
+
+        Button(
+            onClick = { /* TODO */ },
+        ) {
+            Text(text = "Enviar")
+        }
+    }
+
 }
 
 @Preview(showBackground = true)
