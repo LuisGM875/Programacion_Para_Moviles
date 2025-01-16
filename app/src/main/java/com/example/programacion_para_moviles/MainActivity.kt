@@ -88,7 +88,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         Button(
             onClick = { },
         ) {
-            Text(text = "Subir Archivo")
+            Text(text = "Subir")
         }
     }
 }
