@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
             Programacion_Para_MovilesTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Formulario de Contacto",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
