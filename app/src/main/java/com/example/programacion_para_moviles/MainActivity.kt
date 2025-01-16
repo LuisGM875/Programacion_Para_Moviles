@@ -51,7 +51,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     ) {
         Text(text = "Deja un Comentario")
         Text(text = "Nombre:")
-        Text(text= " ")
         OutlinedTextField(
             value = "",
             onValueChange = {  },
